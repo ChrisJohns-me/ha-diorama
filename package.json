@@ -36,10 +36,8 @@
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
-    "atft": "^1.1.0",
     "rxjs": "~6.4.0",
     "three": "^0.108.0",
-    "three.meshline": "^1.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

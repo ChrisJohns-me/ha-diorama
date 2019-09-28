@@ -1,6 +1,26 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "eofline": true,
+    "indent": [true, "spaces", 2],
+    "max-line-length": [true, {"limit": 140, "ignore-pattern": "^import |^export {(.*?)}"}],
+    "quotemark": [true, "single"],
+    "no-inferrable-types": false,
+    "no-console": [true, "log", "debug"],
+    "no-angle-bracket-type-assertion": false,
+    "member-ordering": [true, { "order": "instance-sandwich" }],
+    "member-access": [true, ["check-parameter-property", "check-accessor"]],
+    "no-null-keyword": true,
+    "curly": [false],
+    "radix": false,
+    "ban": [true, "$"],
+    "no-bitwise": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "member-variable-declaration"
+    ],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
@@ -27,36 +47,8 @@
     ],
     "interface-name": false,
     "max-classes-per-file": false,
-    "max-line-length": [
-      true,
-      140
-    ],
-    "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
-        ]
-      }
-    ],
     "no-consecutive-blank-lines": false,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
     "no-empty": false,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
@@ -68,10 +60,6 @@
     ],
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": [
-      true,
-      "single"
-    ],
     "trailing-comma": false,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
