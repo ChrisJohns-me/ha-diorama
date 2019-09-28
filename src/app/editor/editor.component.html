@@ -1,3 +1,6 @@
 <h2>Editor</h2>
-
-<app-render-output></app-render-output>
+<app-menu-bar></app-menu-bar>
+<app-tool-panel *ngIf="(editorService.editorMode$ | async) === 'edit'"></app-tool-panel>
+<!-- <app-view-panel></app-view-panel> -->
+<app-mode-panel></app-mode-panel>
+<div #rendererContainer></div>

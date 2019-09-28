@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RenderOutputComponent } from './render-output.component';
+import { ModePanelComponent } from './mode-panel.component';
 
-describe('RenderOutputComponent', () => {
-  let component: RenderOutputComponent;
-  let fixture: ComponentFixture<RenderOutputComponent>;
+describe('ModePanelComponent', () => {
+  let component: ModePanelComponent;
+  let fixture: ComponentFixture<ModePanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RenderOutputComponent ]
+      declarations: [ ModePanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RenderOutputComponent);
+    fixture = TestBed.createComponent(ModePanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

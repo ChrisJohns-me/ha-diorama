@@ -6,6 +6,7 @@
     "max-line-length": [true, {"limit": 140, "ignore-pattern": "^import |^export {(.*?)}"}],
     "quotemark": [true, "single"],
     "no-inferrable-types": false,
+    "no-var-keyword": true,
     "no-console": [true, "log", "debug"],
     "no-angle-bracket-type-assertion": false,
     "member-ordering": [true, { "order": "instance-sandwich" }],
@@ -22,7 +23,7 @@
       "member-variable-declaration"
     ],
     "array-type": false,
-    "arrow-parens": false,
+    "arrow-parens": true,
     "deprecation": {
       "severity": "warning"
     },
@@ -72,9 +73,8 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
-  },
-  "rulesDirectory": [
-    "codelyzer"
-  ]
+    "use-pipe-transform-interface": true,
+    "variable-name": false
+    }
+  }
 }

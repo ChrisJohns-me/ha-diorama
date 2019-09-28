@@ -38,6 +38,7 @@
     "@angular/router": "~8.2.8",
     "rxjs": "~6.4.0",
     "three": "^0.108.0",
+    "three-orbitcontrols": "^2.108.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
