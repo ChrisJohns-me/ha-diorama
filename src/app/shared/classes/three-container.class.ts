@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 
 export class ThreeContainer {
-  public renderer: THREE.Renderer = new THREE.WebGLRenderer();
+  public renderer: THREE.Renderer = new THREE.WebGLRenderer({ antialias: true });
   public scene: THREE.Scene = new THREE.Scene();
-  public camera: THREE.Camera;
+  public camera: THREE.PerspectiveCamera;
   public controls: any; // TODO: Need strongly typed.
   public raycaster: THREE.Raycaster;
   public get meshObjects(): THREE.Mesh[] { return this._meshObjects; }
@@ -23,7 +23,8 @@ export class ThreeContainer {
   }
 
   public onWindowResize(event: Event): void {
-    this.camera.updateMatrix();
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
@@ -50,7 +51,7 @@ export class ThreeContainer {
   }
 
   public addMesh(...meshes: THREE.Mesh[]): void {
-    meshes.forEach(mesh => {
+    meshes.forEach((mesh) => {
       this.scene.add(mesh);
       this._meshObjects.push(mesh);
     });
@@ -59,7 +60,7 @@ export class ThreeContainer {
   }
 
   public removeMesh(...meshes: THREE.Mesh[]): void {
-    meshes.forEach(mesh => {
+    meshes.forEach((mesh) => {
       this.scene.remove(mesh);
       this._meshObjects = this._meshObjects.filter(o => o.id === mesh.id);
     });

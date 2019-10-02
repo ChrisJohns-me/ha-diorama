@@ -31,9 +31,8 @@ export class EditorComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   public ngAfterViewInit(): void {
-    this.three.renderer.setSize(window.innerWidth, window.innerHeight);
     this.rendererContainer.nativeElement.appendChild(this.three.renderer.domElement);
-
+    this.three.renderer.setSize(window.innerWidth, window.innerHeight);
     this.three.startRenderLoop();
   }
 

@@ -1,0 +1,13 @@
+nav {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: 0;
+  margin: 25px;
+
+  button {
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
