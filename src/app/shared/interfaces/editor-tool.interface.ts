@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 
 export interface IEditorTool {
+  toolName: string;
+
   toolActivationEvent: () => void;
   toolDeactivationEvent: () => void;
   mouseDownEvent?: (event: MouseEvent) => void;

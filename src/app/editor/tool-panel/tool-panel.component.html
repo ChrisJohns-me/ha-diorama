@@ -1,5 +1,4 @@
 <nav class="tool-panel">
-  <button type="button"
-    *ngFor="let key of objectKeys(editorToolList)"
+  <button type="button" *ngFor="let key of objectKeys(editorToolList)"
     (click)="changeTool(key)">{{ editorToolList[key].toolName }}</button>
 </nav>
