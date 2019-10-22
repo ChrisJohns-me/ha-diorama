@@ -11,7 +11,7 @@ export class ThreeResourceTracker {
 
   constructor() { }
 
-  public track(resource: Resource | Resource[]): Resource | Resource[] {
+  public track<T>(resource: T): T {
     if (!resource) return resource;
 
     if (Array.isArray(resource)) {
@@ -19,16 +19,18 @@ export class ThreeResourceTracker {
       return resource;
     }
 
-    if ((<any> resource).dispose || resource instanceof THREE.Object3D) this.resources.add(resource);
+    if ((<any> resource).dispose || resource instanceof THREE.Object3D) this.resources.add(<any> resource);
     if (resource instanceof THREE.Object3D) {
       if ((<any> resource).geometry) this.track((<any> resource).geometry);
       if ((<any> resource).material) this.track((<any> resource).material);
       if ((<any> resource).children) this.track((<any> resource).children);
-    } else if (resource instanceof THREE.Material) {
+    } else if ((<any> resource) instanceof THREE.Material) {
       for (const value of Object.values(resource)) {
-        if (value instanceof THREE.Texture) this.track(value);
+        if (value instanceof THREE.Texture) this.track(<Resource> value);
       }
     }
+
+    return resource;
   }
 
   public dispose(): void {

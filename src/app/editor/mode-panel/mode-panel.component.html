@@ -1,5 +1,8 @@
 <nav>
-  <button type="button" (click)="modeClick('orbit')" [disabled]="(editorService.editorMode$ | async) === 'orbit'">Orbit</button>
-  <button type="button" (click)="modeClick('select')" [disabled]="(editorService.editorMode$ | async) === 'select'">Select</button>
-  <button type="button" (click)="modeClick('edit')" [disabled]="(editorService.editorMode$ | async) === 'edit'">Edit</button>
+  <button type="button" (click)="modeClick('orbit')"
+    [disabled]="(editorService.editorMode$ | async) === 'orbit'">Orbit</button>
+  <button type="button" (click)="modeClick('select')"
+    [disabled]="(editorService.editorMode$ | async) === 'select'">Select</button>
+  <button type="button" (click)="modeClick('edit')"
+    [disabled]="(editorService.editorMode$ | async) === 'edit'">Edit</button>
 </nav>

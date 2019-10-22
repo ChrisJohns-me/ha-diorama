@@ -14,7 +14,7 @@ export class ToolPanelComponent implements OnInit, OnDestroy {
   public objectKeys: (o: object | {}) => string[] = Object.keys;
 
   public selectedTool: IEditorTool;
-  public editorToolList: {[key: string]: IEditorTool};
+  public editorToolList: { [key: string]: IEditorTool };
 
   private three: ThreeContainer;
   private mouseRay: THREE.Vector2 = new THREE.Vector2();
@@ -71,12 +71,12 @@ export class ToolPanelComponent implements OnInit, OnDestroy {
   @HostListener('document:mouseup', ['$event'])
   public mouseUpEvent(event: MouseEvent): void {
     event.preventDefault();
-    if (this.selectedTool && this.selectedTool.clickEvent) this.selectedTool.mouseUpEvent(event);
+    if (this.selectedTool && this.selectedTool.mouseUpEvent) this.selectedTool.mouseUpEvent(event);
   }
   @HostListener('document:mousedown', ['$event'])
   public mouseDownEvent(event: MouseEvent): void {
     event.preventDefault();
-    if (this.selectedTool && this.selectedTool.clickEvent) this.selectedTool.mouseDownEvent(event);
+    if (this.selectedTool && this.selectedTool.mouseDownEvent) this.selectedTool.mouseDownEvent(event);
   }
   // #endregion
 }
