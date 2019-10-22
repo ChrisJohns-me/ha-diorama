@@ -48,26 +48,21 @@ export class EditorComponent implements AfterViewInit, OnInit, OnDestroy {
 
   public createEditorCamera(): void {
     this.three.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-    this.three.camera.position.set(500, 800, 1300);
+    this.three.camera.position.set(50, 80, 125);
     this.three.camera.lookAt(0, 0, 0);
   }
 
   public createGrid(): void {
-    const geometry = new THREE.PlaneBufferGeometry(1000, 1000);
+    const geometry = new THREE.PlaneBufferGeometry(100, 100);
     geometry.rotateX(- Math.PI / 2);
     const plane = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial( { visible: false }));
-    const gridHelper = new THREE.GridHelper(1000, 20);
+    const gridHelper = new THREE.GridHelper(100, 10);
 
     this.three.scene.add(gridHelper);
     this.three.addMesh(plane);
   }
 
   public createGeometry(): void {
-    const geometry = new THREE.BoxGeometry(200, 200, 200);
-    const material = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true});
-    const mesh = new THREE.Mesh(geometry, material);
-
-    this.three.addMesh(mesh);
   }
 
   public setupOrbitControls(): void {
