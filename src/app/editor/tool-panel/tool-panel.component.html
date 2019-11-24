@@ -1,7 +1,8 @@
 <mat-tab-group>
   <mat-tab label="Build">
     <section class="tab-section">
-      <button class="editor-action" mat-button>Draw Wall</button>
+      <button type="button" class="editor-action" *ngFor="let key of objectKeys(editorToolList)" (click)="changeTool(key)"
+        mat-button>{{ editorToolList[key].toolName }}</button>
     </section>
   </mat-tab>
   <mat-tab label="Interact">
