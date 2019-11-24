@@ -1,4 +1,15 @@
-<nav class="tool-panel">
-  <button type="button" *ngFor="let key of objectKeys(editorToolList)"
-    (click)="changeTool(key)">{{ editorToolList[key].toolName }}</button>
-</nav>
+<mat-tab-group>
+  <mat-tab label="Build">
+    <section class="tab-section">
+      <button class="editor-action" mat-button>Draw Wall</button>
+    </section>
+  </mat-tab>
+  <mat-tab label="Interact">
+    <h1>Some tab content</h1>
+    <p>...</p>
+  </mat-tab>
+  <mat-tab label="Furnish">
+    <h1>Some more tab content</h1>
+    <p>...</p>
+  </mat-tab>
+</mat-tab-group>

@@ -1,5 +1,10 @@
-<app-menu-bar></app-menu-bar>
-<app-tool-panel *ngIf="(editorService.editorMode$ | async) === 'edit'"></app-tool-panel>
-<!-- <app-view-panel></app-view-panel> -->
-<app-mode-panel></app-mode-panel>
-<div #rendererContainer></div>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <app-viewtype-selector></app-viewtype-selector>
+    <div #rendererContainer></div>
+    <app-mode-selector></app-mode-selector>
+  </mat-sidenav-content>
+  <mat-sidenav mode="side" position="end" opened #sidebar>
+    <app-tool-panel></app-tool-panel>
+  </mat-sidenav>
+</mat-sidenav-container>

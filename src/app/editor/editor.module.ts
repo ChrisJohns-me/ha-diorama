@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 import { SharedModule } from '../shared/shared.module';
 import { EditorRoutingModule } from './editor-routing.module';
 import { EditorComponent } from './editor.component';
 import { EditorService } from './editor.service';
-import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { ModePanelComponent } from './mode-panel/mode-panel.component';
 import { ToolPanelComponent } from './tool-panel/tool-panel.component';
+import { ViewTypeSelectorComponent } from './viewtype-selector/viewtype-selector.component';
 
 @NgModule({
   declarations: [
     EditorComponent,
-    MenuBarComponent,
     ToolPanelComponent,
-    ModePanelComponent
+    ViewTypeSelectorComponent,
   ],
   imports: [
     SharedModule,
     EditorRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatButtonModule
   ],
   providers: [
     EditorService

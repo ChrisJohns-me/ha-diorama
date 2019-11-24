@@ -22,10 +22,16 @@ export class ThreeContainer {
     this.setupGenericLights();
   }
 
-  public onWindowResize(event: Event): void {
-    this.camera.aspect = window.innerWidth / window.innerHeight;
+  /**
+   * @param width - in pixels of new THREE canvas size.
+   * @param height - in pixels of new THREE canvas size.
+   */
+  public canvasResize(width: number, height: number): void {
+    if (width <= 0 || height <= 0) return;
+
+    this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(width, height);
   }
 
   public startRenderLoop(): void {
@@ -34,13 +40,13 @@ export class ThreeContainer {
   }
 
   public setScene(): void {
-    this.scene.background = new THREE.Color( 0xf0f0f0 );
+    this.scene.background = new THREE.Color(0xf0f0f0);
   }
 
   public setupGenericLights(): void {
-    const ambientLight = new THREE.AmbientLight( 0x606060 );
-    const directionalLight = new THREE.DirectionalLight( 0xffffff );
-    directionalLight.position.set( 1, 0.75, 0.5 ).normalize();
+    const ambientLight = new THREE.AmbientLight(0x606060);
+    const directionalLight = new THREE.DirectionalLight(0xffffff);
+    directionalLight.position.set(1, 0.75, 0.5).normalize();
 
     this.scene.add(ambientLight, directionalLight );
   }

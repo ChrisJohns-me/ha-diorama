@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuBarComponent } from './menu-bar.component';
+import { ViewTypeSelectorComponent } from './viewtype-selector.component';
 
-describe('MenuBarComponent', () => {
-  let component: MenuBarComponent;
-  let fixture: ComponentFixture<MenuBarComponent>;
+describe('ViewTypeSelectorComponent', () => {
+  let component: ViewTypeSelectorComponent;
+  let fixture: ComponentFixture<ViewTypeSelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuBarComponent ]
+      declarations: [ ViewTypeSelectorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuBarComponent);
+    fixture = TestBed.createComponent(ViewTypeSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
